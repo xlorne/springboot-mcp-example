@@ -1,7 +1,7 @@
 package com.codingapi.mcp.server.sse;
 
 
-import com.codingapi.mcp.server.sse.service.WeatherService;
+import com.codingapi.mcp.server.sse.service.WeatherToolProvider;
 import org.springframework.ai.tool.ToolCallbackProvider;
 import org.springframework.ai.tool.method.MethodToolCallbackProvider;
 import org.springframework.boot.SpringApplication;
@@ -16,8 +16,8 @@ public class McpServerApplication {
     }
 
     @Bean
-    public ToolCallbackProvider weatherTools(WeatherService weatherService) {
-        return MethodToolCallbackProvider.builder().toolObjects(weatherService).build();
+    public ToolCallbackProvider weatherTools(WeatherToolProvider weatherToolProvider) {
+        return MethodToolCallbackProvider.builder().toolObjects(weatherToolProvider).build();
     }
 
 }

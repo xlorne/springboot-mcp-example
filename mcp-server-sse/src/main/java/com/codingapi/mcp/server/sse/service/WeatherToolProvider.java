@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 @AllArgsConstructor
-public class WeatherService {
+public class WeatherToolProvider {
 
     private final WeatherClient weatherClient;
 
